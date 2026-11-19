@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DaniFlix</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="storage.js" defer></script>
+    <script src="form.js" defer></script>
+</head>
+<body class="sfondo-personalizzato">
+
+    <header class="login-header">
+        <a href="index.html" class="logo-link" aria-label="Torna alla homepage">
+            <img src="LOGO/LOGO2.png" alt="Logo DaniFlix" class="logo-login">
+        </a>
+    </header>
+
+    <main class="login-page">
+        <section class="overlay2" aria-label="Modulo login e registrazione DaniFlix">
+            <form id="authForm" novalidate>
+                <div class="form-intro">
+                    <span class="form-badge" id="formBadge">Bentornato su DaniFlix</span>
+                    <h1 id="authTitle">Accedi</h1>
+                    <p id="authSubtitle">Entra nel tuo profilo e continua a guardare i tuoi contenuti preferiti.</p>
+                </div>
+
+                <p class="nota-demo">Accesso dimostrativo. Usa un’email fittizia e una password che non usi altrove.</p>
+                <div class="auth-tabs" aria-label="Scegli accesso o registrazione">
+                    <button type="button" id="tabAccedi" class="tab-attiva">Accedi</button>
+                    <button type="button" id="tabRegistrati">Registrati</button>
+                </div>
+
+                <div class="campo-form campo-nome nascosto" id="campoNome">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" aria-describedby="erroreNome" placeholder="Il tuo nome" autocomplete="name">
+                    <div id="erroreNome" class="errore"></div>
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" aria-describedby="erroreEmail" placeholder="nome@email.com" autocomplete="email">
+                    <div id="erroreEmail" class="errore"></div>
+                </div>
+
+                <div class="campo-form">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" aria-describedby="errorePassword" placeholder="Inserisci la password" autocomplete="current-password">
+                    <div id="errorePassword" class="errore"></div>
+                </div>
+
+                <a href="#" id="generaPassword">Genera password demo</a>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="accetto" aria-describedby="erroreAccetto">
+                    <label for="accetto">Accetto le condizioni di utilizzo</label>
+                </div>
+                <div id="erroreAccetto" class="errore"></div>
+
+                <button id="bottoneAuth" type="submit">ACCEDI</button>
+
+                <p id="successo" class="messaggio-successo" role="status"></p>
+                <p id="erroreArchivio" class="errore" role="alert"></p>
+
+                <p class="nota-accesso" id="notaAccesso">
+                    Non hai ancora un profilo? Clicca su <strong>Registrati</strong>, salva l'account e poi fai <strong>Accedi</strong>.
+                </p>
+            </form>
+        </section>
+
+        <a href="index.html" class="menu-principale">Torna al menu principale</a>
+    </main>
+
+</body>
+</html>

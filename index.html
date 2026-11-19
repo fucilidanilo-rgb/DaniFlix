@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaniFlix | Stranger Things</title>
+    <script src="storage.js" defer></script>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="pagina">
+        
+   <header id="navbar"> 
+   <img id="logo" src="LOGO/LOGO2.png" alt="DaniFlix">
+   <nav aria-label="Sezioni della pagina"><ul id="navlinks">
+    <li><a href="#trailer">Trailer</a></li>
+   <li><a href="#sezione-episodi">Episodi</a></li>
+    <li><a href="#altri-titoli">Altri titoli da guardare</a></li>
+    <li><a href="#piani">Piani</a></li>
+   </ul></nav>
+
+<!--area utente: se non sei loggato mostra Accedi, se sei loggato mostra Logout-->
+   <div id="areaUtente">
+    <a href="form.html" id="Accedi">Accedi</a>
+   </div>
+ 
+</header>
+<main>
+   
+
+
+   
+<!--video con play e stop  mute -->
+    <div id="preview-container">
+        
+   <video autoplay muted playsinline poster="IMMAGINI/Stranger.jpg">
+<source src="video/videoplayback.mp4">
+   </video>
+   <div id="preview-overlay">
+    
+
+    <div id="preview-details">
+      <img id="loghett" src="IMMAGINI/stranger.PNG" alt="Stranger Things">
+       <button id="playButton">▶️ Guarda</button>
+       <button id="mute">🔇 Attiva audio</button>
+
+</div>
+
+
+<!--primo form presente nell abbonamento nella pagina index con bottone-->
+    <form id="form-abbonamento" novalidate>
+    <input type="email" id="email" placeholder="Indirizzo email" aria-label="Indirizzo email" aria-describedby="erroreEmail" autocomplete="email">
+    <span id="erroreEmail" role="status"></span>
+
+    <button id="bottoneAccediForm" type="submit">Abbonati ora</button>
+    <p>Intrattenimento senza fine a partire da 6,99 € al mese</p>
+
+    </form>
+
+
+
+</div>
+</div>
+
+
+
+<!--bottone con scroll abbonati rosso-->
+
+
+<a href="#form-abbonamento" id="abbonati" class="abbonati">Abbonati ora</a>
+
+
+<!--container grigio-->
+
+<div class="container-grigio">
+  <div class="figlio-container">
+  <h1>Stranger Things</h1> 
+  <p>2025  -   5 stagioni    -    16+  -   Fantascienza</p>
+  <p>La scomparsa di un ragazzino in una cittadina porta alla luce un mistero in cui si mescolano esperimenti segreti, spaventose forze soprannaturali e una strana bambina.</p>
+  </div>
+
+  <div class="seconda-colonna">
+
+    <p>Con: Winona Ryder, David Harbour e Millie Bobby Brown
+Autori: The Duffer Brothers</p>
+  </div>
+</div>
+
+
+
+
+
+     
+ <!--menu episodi-->
+    
+    
+  <div class="menu-episodi" id="sezione-episodi"> 
+  <h1>Episodi</h1>
+  <select id="strangerSelect" aria-label="Stagione" onchange="showStranger(this.value)"><!--seleziona la stagione  e mostra lepisodio-->
+    <option value="stranger1">Stranger Things 1</option>
+    <option value="stranger2">Stranger Things 2</option>
+    <option value="stranger3">Stranger Things 3</option>
+    <option value="stranger4">Stranger Things 4</option>
+    <option value="stranger5">Stranger Things 5</option>
+  </select>
+</div>
+
+<div class="gallery-wrapper">
+ 
+<div class="gallery">
+
+  <button id="btn-sinistro" aria-label="Episodi precedenti" class="scroll-btn">❮</button>
+
+  <!-- Stagione 1 -->
+  <div class="item" id="stranger1">
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-3rl5h2uhuz54liur.jpg" alt="Capitolo 1">
+      <p>Capitolo 1: La scomparsa di Will Byers</p>
+      <p>Di ritorno da casa di un amico, il giovane Will vede qualcosa di terrificante. Nel vicino laboratorio governativo si cela un oscuro segreto.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-9uw60m7cnna2olbh.jpg" alt="Capitolo 2">
+      <p>Capitolo 2: La stramba di Maple Street</p>
+      <p>Lucas, Mike e Dustin provano a parlare con la ragazza ritrovata nel bosco. Hopper interroga Joyce su un'inquietante telefonata.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-d5injm820371ykug.jpg" alt="Capitolo 3">
+      <p>Capitolo 3: Luci natalizie</p>
+      <p>Nancy, sempre più preoccupata, cerca Barb e scopre che cosa ha fatto Jonathan. Joyce è convinta che Will stia cercando di comunicare con lei.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-ouexazv4l8mupxhd.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-p48s7haf5zysli77.jpg" alt="Capitolo 5">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-s4z7w4szejhnhjlo (1).jpg" alt="Capitolo 6">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+  </div> <!-- fine stranger1 -->
+
+  <!-- Stagione 2 -->
+  <div class="item" id="stranger2">
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-s4z7w4szejhnhjlo.jpg" alt="Capitolo 1">
+      <p>Capitolo 1: Il ritorno di Will</p>
+      <p>Will torna a casa ma strani eventi iniziano a manifestarsi nella cittadina di Hawkins.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/stranger-things-season-4-pictures-u36ve7bczhc7edcl.jpg" alt="Capitolo 2">
+      <p>Capitolo 2: Ombre dal passato</p>
+      <p>Lucas e Mike cercano di capire cosa sia successo durante l'assenza di Will, mentre Undici affronta nuove sfide.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/1.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/2.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/3.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/4.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+  </div> <!-- fine stranger2 -->
+
+  <!-- Stagione 3 -->
+  <div class="item" id="stranger3">
+    <div class="card">
+      <img src="IMMAGINI EPISODI/5.jpg" alt="Capitolo 1">
+      <p>Capitolo 1: Estate a Hawkins</p>
+      <p>I ragazzi affrontano un'estate calda e misteriosa, mentre un nuovo pericolo incombe sulla città.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/6l.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/7.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/8.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/9.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/10.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+  </div> <!-- fine stranger3 -->
+
+  <!-- Stagione 4 -->
+  <div class="item" id="stranger4">
+    <div class="card">
+      <img src="IMMAGINI EPISODI/11.jpg" alt="Capitolo 1">
+      <p>Capitolo 1: Oscurità crescente</p>
+      <p>Strani eventi minacciano Hawkins: gli amici si preparano ad affrontare l'ignoto insieme.</p>
+    </div>
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/12j.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+
+    <div class="card">
+      <img src="IMMAGINI EPISODI/16.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+  </div> <!-- fine stranger4 -->
+
+  <!-- Stagione 5 -->
+  <div class="item" id="stranger5">
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 1">
+      <p>Capitolo 1: L'ultima battaglia</p>
+      <p>Il mistero raggiunge il culmine e i ragazzi devono affrontare il loro nemico più potente.</p>
+    </div>
+<div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+
+    <div class="card">
+      <img src="trailer/scena-di-fantasia-oscura.jpg" alt="Capitolo 4">
+      <p>Capitolo 4: Il corpo</p>
+      <p>Rifiutando la morte del figlio, Joyce cerca di entrare in contatto con lui. I ragazzi sistemano Undici, mentre Nancy e Jonathan siglano un'improbabile alleanza.</p>
+    </div>
+  </div> <!-- fine stranger5 -->
+
+
+
+
+  
+
+ <button id="btn-destro" aria-label="Episodi successivi" class="scroll-btn">❯</button>
+</div> <!-- fine gallery -->
+</div>
+
+
+
+
+
+
+
+<!--TRAILER-->
+<h1 id="trailer">Trailer</h1>
+<div class="carousel-container-global" style="position: relative;">
+  <button id="prev-trailer" aria-label="Trailer precedenti" class="scroll-btn" style="left:0">❮</button>
+  
+  <div class="carousel-wrapper" id="trailer-slider">
+    <button type="button" class="trailer-container" onclick="apriVideo(0)">
+      <img src="IMMAGINI EPISODI/13g.jpg" alt="">
+      <span class="play-btn" aria-hidden="true">▶</span>
+      <span>TRAILER PART I</span>
+      <strong>Stranger things 1 - L'inizio</strong>
+    </button>
+
+    <button type="button" class="trailer-container" onclick="apriVideo(1)">
+      <img src="immagini trailer/king.jpg" alt="">
+      <span class="play-btn" aria-hidden="true">▶</span>
+      <span>TRAILER PART II</span>
+      <strong>Stranger things 2</strong>
+    </button>
+
+    <button type="button" class="trailer-container" onclick="apriVideo(2)">
+      <img src="immagini trailer/stranger-things-season-4-pictures-4jp53cux5zi91dcp.jpg" alt="">
+      <span class="play-btn" aria-hidden="true">▶</span>
+      <span>TRAILER PART III</span>
+      <strong>Stranger things 3</strong>
+    </button>
+
+    <button type="button" class="trailer-container" onclick="apriVideo(3)">
+      <img src="immagini trailer/stranger-things-season-4-pictures-hdcq4nfpo4pjeatc.jpg" alt="">
+      <span class="play-btn" aria-hidden="true">▶</span>
+      <span>TRAILER PART IV</span>
+      <strong>Stranger things 4</strong>
+    </button>
+
+    <button type="button" class="trailer-container" onclick="apriVideo(4)">
+      <img src="immagini trailer/stranger-things-season-4-pictures-j816hg5y3xvpz3w9.jpg" alt="">
+      <span class="play-btn" aria-hidden="true">▶</span>
+      <span>TRAILER PART V</span>
+      <strong>Stranger things 5 - The Finals</strong>
+    </button>
+  </div>
+
+  <button id="next-trailer" aria-label="Trailer successivi" class="scroll-btn" style="right:0">❯</button>
+</div>
+
+
+
+
+<dialog id="videoModal" class="modal" aria-label="Trailer DaniFlix">
+  <button type="button" class="close-btn" aria-label="Chiudi trailer">×</button>
+  <video id="player" controls playsinline>
+    Il tuo browser non supporta i video.
+  </video>
+</dialog>
+
+
+
+
+
+
+
+
+ 
+
+
+  
+
+
+
+<h1>Ulteriori Informazioni</h1>
+
+<div class="informazioni">
+
+<div class="informazioni1">
+ <h2>Guarda offline</h2>
+      <p>Disponibile per il download</p>
+      
+      <h2>Generi</h2>
+      <p>Drammi TV, Fantascienza - TV, Serie TV per adolescenti, Serie TV USA e Horror TV</p>
+      
+      <h2>Caratteristiche:</h2>
+      <p>Inquietante, Nostalgico, Fantascienza, Colonna sonora famosa, Poteri paranormali, Anni '80, Spaventoso, Complotti, Horror, Adolescenziale e TV</p>
+    </div>
+<div class="informazioni2">
+  <h2>Audio</h2>
+      <p>Tedesco - Audiodescrizione, Tedesco, Inglese [originale], Spagnolo, Francese, Italiano, Ucraino</p>
+      
+      <h2>Sottotitoli</h2>
+      <p>Tedesco, Greco, Inglese, Francese, Italiano e Ucraino</p>
+    </div>
+<div class="informazioni3">
+ <h2>Cast</h2>
+      <p>Winona Ryder, David Harbour, Millie Bobby Brown, Finn Wolfhard, Gaten Matarazzo, Caleb McLaughlin, Noah Schnapp, Sadie Sink, Natalia Dyer e Charlie Heaton</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--galleria altri titoli da guardare-->
+
+
+
+
+
+
+<h3 id="altri-titoli">Altri titoli da guardare</h3>
+
+
+<section id="category">
+  
+
+  <!-- Freccia sinistra -->
+  <button id="btn-left" aria-label="Titoli precedenti" class="arrow">❮</button>
+
+  <!-- Contenitore immagini -->
+  <div class="category-container">
+    <img src="IMMAGINI/amoreholiday.jpg" class="visibile">
+    <img src="IMMAGINI/bridgerton.jpg" class="prossima">
+    <img src="IMMAGINI/casa di cata.jpg">
+    <img src="IMMAGINI/compagni di scuola.jpg">
+    <img src="IMMAGINI/emily inapris.jpg">
+    <img src="IMMAGINI/grinch.jpg">
+    <img src="IMMAGINI/perfettisconosciuti.jpg">
+    <img src="IMMAGINI/unamamma per amica.jpg">
+    <img src="IMMAGINI/LUPIN_S2_9X16_IT20210128-6828-1gdk768.jpg.webp">
+    <img src="IMMAGINI/f1 film.jpg">
+    <img src="IMMAGINI/it.jpg">
+    <img src="IMMAGINI/supergirl.jpg">
+    <img src="IMMAGINI/superman.jpg">
+  </div>
+
+  <!-- Freccia destra -->
+  <button id="btn-right" aria-label="Titoli successivi" class="arrow">❯</button>
+</section>
+
+
+<!--piani-->
+
+
+<div class="piani-container" id="piani">
+  
+  <a href="piano.html">
+    <div class="piano card-blue">
+      <h3>Standard con pubblicità</h3>
+      <p class="risoluzione">1080p</p>
+      <ul>
+        <li>Buona qualità video</li>
+        <li>Meno pubblicità di quanto immagini</li>
+      </ul>
+      <p class="prezzo">6,99 €/mese</p>
+    </div>
+  </a>
+
+  <a href="piano.html">
+    <div class="piano card-purple">
+      <h3>Standard</h3>
+      <p class="risoluzione">1080p</p>
+      <ul>
+        <li>Buona qualità video</li>
+        <li>Senza pubblicità</li>
+      </ul>
+      <p class="prezzo">9,99 €/mese</p>
+    </div>
+  </a>
+
+  <a href="piano.html">
+    <div class="piano card-dark-purple">
+      <h3>Premium</h3>
+      <p class="risoluzione">4K + HDR</p>
+      <ul>
+        <li>Qualità video massima</li>
+        <li>Senza pubblicità</li>
+      </ul>  
+      <p class="prezzo">13,99 €/mese</p>
+    </div>
+  </a>
+
+</div>
+
+<!--banner prossimi-->
+<div class="banner-prossimi">
+  <div class="banner-content">
+    <h2>Scopri i tuoi prossimi titoli preferiti e tante nuove uscite ogni settimana</h2>
+  <a class="btn-scopri" href="https://about.netflix.com/it/newsroom">Notizie da Netflix</a>
+  </div>
+</div>
+
+
+<!--footer-->
+
+<footer class="netflix-footer">
+  <p class="footer-contact">DaniFlix · Progetto didattico indipendente</p>
+
+  <div class="footer-links-container">
+    <ul class="footer-links-column">
+      <li><a href="#">Domande frequenti</a></li>
+      <li><a href="#">Rapporti con gli investitori</a></li>
+      <li><a href="#">Come guardare Netflix</a></li>
+      <li><a href="#">Informazioni sull'azienda</a></li>
+      <li><a href="#">Note legali</a></li>
+    </ul>
+
+    <ul class="footer-links-column">
+      <li><a href="#">Centro assistenza</a></li>
+      <li><a href="#">Opportunità di lavoro</a></li>
+      <li><a href="#">Condizioni di utilizzo</a></li>
+      <li><a href="#">Contattaci</a></li>
+      <li><a href="#">Solo su Netflix</a></li>
+    </ul>
+
+    <ul class="footer-links-column">
+      <li><a href="#">Account</a></li>
+      <li><a href="#">Riscatta carte regalo</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Test di velocità</a></li>
+      <li><a href="#">Preferenze per la pubblicità</a></li>
+    </ul>
+
+    <ul class="footer-links-column">
+      <li><a href="#">Media Center</a></li>
+      <li><a href="#">Acquista carte regalo</a></li>
+      <li><a href="#">Preferenze per i cookie</a></li>
+      <li><a href="#">Garanzia legale</a></li>
+    </ul>
+  </div>
+
+  <div class="language-selector">
+    <select name="language" id="lang-select">
+      <option value="it">Italiano</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <p class="footer-country">DaniFlix</p>
+</footer>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+</main>
+</div>
+
+
+
+
+  
+</body>
+</html>

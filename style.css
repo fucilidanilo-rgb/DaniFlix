@@ -1,0 +1,776 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#navlinks a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#navlinks li {
+    list-style: none;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+#navlinks li:hover {
+    color:rgb(118, 65, 65) ;
+}
+
+#search-icon {
+    height:36px;
+    margin-left: auto;
+    
+}
+
+#logo {
+    display: block;
+    width: clamp(5.5rem, 14vw, 10rem);
+    height: auto;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    padding-block: 0.65rem;
+    background: #121019;
+    border-bottom: 1px solid #393144;
+}
+
+#navlinks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+#preview-container video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+}
+
+#preview-overlay {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 19rem);
+    align-items: end;
+    gap: 1.25rem;
+    padding: clamp(1rem, 4vw, 3rem);
+    background: linear-gradient(0deg, #120d1bf0, #120d1b15 85%);
+}
+
+#preview-container {
+    position: relative;
+    display: grid;
+    min-height: clamp(24rem, 52vw, 38rem);
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 0 0 1rem 1rem;
+}
+
+#preview-details {
+    min-width: 0;
+}
+
+#preview-details h3  {
+    font-size: 40px;
+    margin:15px 0;
+}
+#preview-details button {
+    height: 50px;
+    background-color: rgba(50, 50, 50, 0.4);
+    color: white;
+    border:none ;
+    border-radius: 90px;
+    min-width: 100px;
+    padding-inline: 0.75rem;
+    font-size: 15px;
+}
+
+#preview-details button:hover {
+    background-color: white;
+    color: black;
+}
+
+#category img {
+    
+    width:150px;
+    margin-right:4px;
+    height:200px;
+    
+}
+
+#category {
+    position: relative;
+    margin-block: 0.65rem;
+}
+
+#form-abbonamento {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: #17131ee8;
+    scroll-margin-top: 8rem;
+}
+
+#form-abbonamento input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    padding: 5px;
+    
+}
+
+#form-abbonamento button {
+    width: 100%;
+    height: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#form-abbonamento button:hover {
+    background-color: darkred;
+}
+
+.nascosto-login {
+    display: none !important;
+}
+
+#logo2 {
+     height: 35px;
+    margin: 0 75px;
+
+}
+
+#loghett {
+    display: block;
+    width: min(100%, 15rem);
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+#areaUtente {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.nome-utente {
+    min-width: 0;
+    max-width: 12rem;
+    overflow-wrap: anywhere;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+#Logout {
+    background-color: transparent;
+    color: rgb(239, 233, 233);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#Logout:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+#Accedi {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    border-radius: 0.45rem;
+    background: #b52648;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#Accedi:hover {
+    background-color: darkred;
+}
+
+.abbonati {
+  padding: 12px 20px;
+   background-color: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* stato iniziale nascosto */
+  position: fixed;
+  bottom: 20px;
+  opacity: 0;
+  left: 50%;               /* centro orizzontale */
+  transform: translate(-50%, 20px);
+  z-index: 1000;
+  visibility: hidden;
+  pointer-events: none; /* non cliccabile quando nascosto */
+}
+
+.abbonati.mostra {
+  visibility: visible;
+  opacity: 1;
+ transform: translate(-50%, 0);
+  pointer-events: auto; /* cliccabile */
+}
+
+.container-grigio {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-block: 1rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 0.85rem;
+    background: #24202c;
+}
+
+.figlio-container {
+    min-width: 0;
+}
+
+.seconda-colonna {
+    min-width: 0;
+}
+
+.category-container {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px 20px;
+ gap: 8px;
+  
+}
+
+.category-container img {
+  width: 150px;
+  min-height: 200px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s ease
+}
+
+.category-container img:hover {
+    transform: scale(1.15);
+    
+ 
+}
+
+.arrow {
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    width: 40px;
+    height: 80px;
+    cursor: pointer;
+    background-color: rgb(9, 0, 0);
+    border: none;
+    z-index: 100;
+}
+
+#btn-left { left: 0; top: 50%; }
+
+#btn-right { right: 0; top: 50%; }
+
+h3 {
+    margin-top: 40px;
+    font-size: 30px;
+        margin-bottom: 10px;
+    
+}
+
+.menu-episodi {display: flex;
+    gap:20px;
+     align-items: center; 
+
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+ select {
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            background-color: rgb(40, 24, 24);
+            color: white;
+            font-size: 15px;
+        }
+
+.gallery-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.gallery, .carousel-wrapper {
+    display: flex;
+    gap: 20px; /* Spazio identico per entrambi */
+    padding: 20px 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+   margin-left: 0;
+}
+
+.gallery {
+            display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+   width: 100%;
+    gap: 20px;
+    padding: 10px 0;
+           
+}
+
+.item {
+            display: none; /* Nascondi tutte le immagini inizialmente */
+            text-align: center;
+              box-shadow: 0 0 20px rgba(0,0,0,0.6);
+              gap: 20px;
+           
+     
+}
+    
+          
+        
+
+        .item img {
+             width: 100px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 10px;
+            
+        }
+
+#stranger1 {
+     display: flex;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 15px;
+  flex: 0 0 clamp(260px, 30vw, 380px);
+  max-width: 380px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+   
+}
+
+.card img {
+     width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ddd;
+    padding: 10px;;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+#btn-sinistro {
+    left: 0;
+    top: 50%;
+}
+
+#btn-destro {
+    right: 0;
+    top: 50%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+}
+
+.trailer-container {
+ 
+  
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-left: 0;
+   flex: 0 0 min(85%, clamp(15rem, 36vw, 23rem));
+  max-width: 380px;
+}
+
+.trailer-container:hover {
+  transform: scale(1.05);
+}
+
+.trailer-container img {
+  width: 100%;      /* Portalo al 100% per eliminare lo spazio vuoto */
+  height: 210px;    /* Altezza fissa per coerenza */
+  border-radius: 8px;
+  border: 2px solid white;
+  display: block;   /* Rimuove spazi vuoti sotto l'immagine */
+  object-fit: cover;
+  
+}
+
+.play-btn {
+    font-size: 30px;
+  position: absolute;
+  top:40%; /* Centra verticalmente */
+  left: 50%;
+   margin-bottom: 80px;
+   /* Centra orizzontalmente */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Cerchio scuro trasparente */
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Correzione esatta del centro */
+  display: flex;           /* Attiva il sistema Flex */
+  align-items: center;     /* Centra verticalmente il simbolo */
+  justify-content: center;
+}
+
+.modal {
+    width: min(90vw, 52rem);
+    padding: 3rem 1rem 1rem;
+    border: 1px solid #614e70;
+    border-radius: 0.75rem;
+    background: #121019;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.35rem;
+    right: 1rem;
+    background: transparent;
+    color: white;
+    border: 0;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+video {
+  width: 100%;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background: #000;
+}
+
+.carousel-wrapper::-webkit-scrollbar,
+.category-container::-webkit-scrollbar,
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.informazioni { display: flex;
+gap:20px
+
+}
+
+.informazioni1, .informazioni2, .informazioni3 {
+background-color: #1a1a1a;
+  color: white;       /* Per leggere meglio il testo sul grigio scuro */
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 25px;      /* Aggiunge respiro al testo interno */
+  border-radius: 8px; /* Opzionale: arrotonda gli angoli */
+  
+  font-size: 14px;
+  line-height: 1.4;
+  
+}
+
+h2 {
+    font-size: 18px;
+}
+
+/* Contenitore principale */
+.piani-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding-block: 1.25rem;
+}
+
+/* Stile comune per ogni scheda (div) */
+.piano {
+  height: 100%;
+  gap: 0.5rem;
+  padding: 25px;
+  border-radius: 12px; /* Angoli arrotondati */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px; /* Altezza ridotta ma bilanciata */
+  
+}
+
+/* Colori specifici (Gradienti simili all'immagine) */
+.card-blue {
+  background: linear-gradient(135deg, #5c6472 0%, #0c1a33 100%);
+}
+
+.card-purple {
+  background: linear-gradient(135deg, #5c6472 0%, #1a122b 100%);
+}
+
+.card-dark-purple {
+  background: linear-gradient(135deg, #5c6472 0%, #200d1b 100%);
+}
+
+/* Stile del testo interno */
+.piano h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.risoluzione {
+  font-weight: bold;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.piano ul {
+  list-style-type: "✓ "; /* Aggiunge la spunta */
+  
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.prezzo {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0;
+    line-height: 1.4;
+}
+
+.banner-prossimi {
+  
+  width: 100%; 
+  margin: 40px auto;
+  min-height: 200px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+ 
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('banner/22222.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  box-sizing: border-box;
+
+}
+
+.banner-content h2 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 24px;
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+.btn-scopri {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  backdrop-filter: blur(5px); /* Effetto vetro sfocato */
+  border-radius: 7%;
+}
+
+.btn-scopri:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Container principale del footer */
+.netflix-footer {
+    background-color: #000000; /* Sfondo nero come da immagine */
+    color: #757575;            /* Colore del testo grigio tipico di Netflix */
+    padding: 2.5rem 0 3rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.netflix-footer a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.netflix-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.footer-links-container {
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.footer-links-column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-column li {
+    margin-bottom: 12px;
+}
+
+.language-selector {
+    margin: 20px 0;
+}
+
+.language-selector select {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #999;
+    border: 1px solid #333;
+    padding: 12px 26px;
+    border-radius: 2px;
+    appearance: none; 
+    -webkit-appearance: none;
+}
+
+/* Testo finale del paese */
+.footer-country {
+    margin-top: 25px;
+    font-size: 11px;
+}
+
+.messaggio-successo {
+    color: #00ff6a;      
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.piano {
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animazione morbida */
+  cursor: pointer;
+}
+
+.piano:hover {
+  transform: translateY(-8px) scale(1.03); /* si solleva e ingrandisce leggermente */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+
+}
+/* Header e contenuto condividono gli stessi bordi esterni. */
+.pagina {
+    width: min(75rem, calc(100% - clamp(1.5rem, 6vw, 4rem)));
+    margin-inline: auto;
+}
+
+.container-grigio h1 { margin-top: 0; }
+.menu-episodi { flex-wrap: wrap; }
+#piani > a, .btn-scopri, .abbonati { color: inherit; text-decoration: none; }
+#piani, #sezione-episodi, #trailer, #altri-titoli { scroll-margin-top: 8rem; }
+#erroreEmail:not(:empty) { display: block; margin-bottom: 0.65rem; color: #ffc0c8; }
+.trailer-container { padding: 0; border: 0; color: inherit; background: transparent; text-align: left; }
+.trailer-container > strong { display: block; }
+.trailer-container .play-btn { top: min(100px, 28%); }
+.modal::backdrop { background: #000d; }
+.modal video { display: block; max-height: 72vh; }
+:focus-visible { outline: 2px solid #f8a7cc; outline-offset: 2px; }
+
+@media (max-width: 760px) {
+    #navbar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    #navbar nav { grid-column: 1 / -1; grid-row: 2; }
+    #areaUtente { grid-row: 1; grid-column: 2; }
+    #preview-overlay { grid-template-columns: minmax(0, 1fr); align-content: end; padding-top: 6rem; }
+    #form-abbonamento { width: min(100%, 24rem); }
+    .container-grigio { grid-template-columns: minmax(0, 1fr); }
+    .informazioni { flex-direction: column; }
+    #piani { grid-template-columns: minmax(0, 1fr); }
+    #piani .piano { min-height: 0; }
+    .footer-links-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .category-container { padding-inline: 0; }
+}
+
+@media (max-width: 420px) {
+    #navlinks { gap: 0.5rem; }
+    #navlinks li { font-size: 0.78rem; }
+    .menu-episodi { gap: 0.35rem 1rem; }
+    .menu-episodi select { margin-top: 0; }
+}

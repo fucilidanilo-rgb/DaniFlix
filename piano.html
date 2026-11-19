@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piani | DaniFlix</title>
+    <link rel="stylesheet" href="piano.css">
+    <script src="storage.js"></script>
+    <script>
+      if (!leggiSessione()) {
+        window.location.replace("form.html?destinazione=piano");
+      }
+    </script>
+</head>
+<body>
+
+<h1 style="text-align:center; margin:40px 0;">
+  Scegli il piano più adatto a te
+</h1>
+
+<div class="piani-container">
+
+  <div class="piano card-blue">
+    <h3>Standard con pubblicità</h3>
+    <p class="risoluzione">1080p</p>
+    <ul>
+      <li>Buona qualità video</li>
+      <li>Meno pubblicità</li>
+      <li>2 dispositivi</li>
+    </ul>
+    <p class="prezzo">6,99 €/mese</p>
+  </div>
+
+  <div class="piano card-purple">
+    <h3>Standard</h3>
+    <p class="risoluzione">1080p</p>
+    <ul>
+      <li>Senza pubblicità</li>
+      <li>2 dispositivi</li>
+      <li>Download</li>
+    </ul>
+    <p class="prezzo">9,99 €/mese</p>
+  </div>
+
+  <div class="piano card-dark-purple">
+    <h3>Premium</h3>
+    <p class="risoluzione">4K + HDR</p>
+    <ul>
+      <li>Qualità massima</li>
+      <li>4 dispositivi</li>
+      <li>Audio spaziale</li>
+    </ul>
+    <p class="prezzo">13,99 €/mese</p>
+  </div>
+
+</div>
+
+
+ <div class="tasto-home"><a class="principale" href="index.html">Home</a></div>
+   
+
+
+
+
+
+
+</body>
+</html>
